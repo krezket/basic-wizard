@@ -24,6 +24,13 @@ header {
         backdrop-filter: blur(3px);
 }
 
+form {
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        margin: 10px;
+}
+
 .button-con {
         display: flex;
         flex-direction: column;
@@ -37,18 +44,73 @@ header {
         backdrop-filter: blur(3px);
 }
 
-form {
-        display: flex;
-        flex-direction: column;
-        max-width: 200px;
-        margin: 10px;
-}
 
 .select-con {
         display: flex;
         flex-direction: row;
         padding-top: 10px;
         max-width: 100px;
+}
+
+.dropdown-box input {
+        border: 1px solid darkred;
+        outline: none;
+}
+
+.dropdown-box .selected-item {
+        position: relative;
+}
+
+.dropdown-box .selected-item::after {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border: 1px solid;
+        border-color: transparent rgb(129, 129, 129) rgb(129, 129, 129) transparent;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-70%) rotate(45deg);
+}
+
+.dropdown-box .selected-item,
+.dropdown-box .selected-item input {
+        cursor: pointer;
+}
+
+.dropdown-box .dropdown-content {
+        box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+        border-radius: 5px;
+        max-height: 240px;
+        overflow: auto;
+        display: none;
+}
+
+.dropdown-box.active .dropdown-content {
+        display: block;
+}
+
+.dropdown-box .dropdown-content .search-input {
+        padding: 5px;
+}
+
+.dropdown-box .dropdown-content ul {
+        list-style: none;
+}
+
+.dropdown-box .dropdown-content ul li {
+        font-size: 0.8rem;
+        padding: 2px 5px;
+        cursor: pointer;
+}
+
+.dropdown-box .dropdown-content ul li:hover {
+        background-color: rgb(245, 245, 245);
+}
+
+.dropdown-box .dropdown-content ul li.active {
+        background-color: rgb(213, 242, 246);
+        color: blue;
 }
 
 .alchemy {
