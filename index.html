@@ -255,7 +255,32 @@
                         </div>
                 </footer>
         </main>
+        <script>
+                window.addEventListener("load", () => {
+                        window.addEventListener("click", windowClickEvent => {
+                                const dropdown = document.querySelector(".dropdown-box");
+                                const dropdownContent = document.querySelector(".dropdown-content");
+                                const selectedItem = document.querySelector(".selected-item");
+                                if (dropdown.classList.contains("active")) {
+                                        if (dropdownContent.contains(!windowClickEvent.target)) {
+                                                closeDropDown();
+                                        }
+                                }
+                                else if (selectedItem.contains(windowClickEvent.target)) {
+                                        openDropDown();
+                                }
 
+                        })
+                })
+                function openDropDown() {
+                        const dropdown = document.querySelector(".dropdown-box");
+                        dropdown.classList.add("active");
+                }
+                function closeDropDown() {
+                        const dropdown = document.querySelector(".dropdown-box");
+                        dropdown.classList.remove("active");
+                }
+        </script>
 </body>
 
 </html>
