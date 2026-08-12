@@ -52,6 +52,10 @@ form {
         max-width: 100px;
 }
 
+.dropdown-box {
+        position: relative;
+}
+
 .dropdown-box input {
         border: 1px solid darkred;
         outline: none;
@@ -84,6 +88,10 @@ form {
         max-height: 240px;
         overflow: auto;
         display: none;
+        position: absolute;
+        z-index: 99;
+        background-color: white;
+        width: 100%;
 }
 
 .dropdown-box.active .dropdown-content {
