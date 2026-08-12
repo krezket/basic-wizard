@@ -52,43 +52,77 @@ form {
         max-width: 100px;
 }
 
+* {
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, sans-serif;
+}
+
 .dropdown-box {
         position: relative;
+        width: 250px;
+        /* Gives the dropdown a consistent width */
 }
 
 .dropdown-box input {
-        border: 1px solid darkred;
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
         outline: none;
+        font-size: 1rem;
+        transition: border-color 0.2s ease;
+}
+
+.dropdown-box input:focus,
+.dropdown-box.active .selected-item input {
+        border-color: #007bff;
 }
 
 .dropdown-box .selected-item {
         position: relative;
-}
-
-.dropdown-box .selected-item::after {
-        content: "";
-        width: 3px;
-        height: 3px;
-        border: 1px solid;
-        border-color: transparent rgb(129, 129, 129) rgb(129, 129, 129) transparent;
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-70%) rotate(45deg);
-}
-
-.dropdown-box .selected-item,
-.dropdown-box .selected-item input {
         cursor: pointer;
 }
 
+.dropdown-box .selected-item input {
+        cursor: pointer;
+        background-color: #fff;
+        caret-color: transparent;
+        user-select: none;
+}
+
+/* Dropdown Arrow */
+.dropdown-box .selected-item::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border: 2px solid;
+        border-color: transparent #555 #555 transparent;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-70%) rotate(45deg);
+        transition: transform 0.3s ease;
+        /* Animates the arrow */
+        pointer-events: none;
+        /* Prevents the arrow from blocking clicks */
+}
+
+/* Flip arrow when dropdown is open */
+.dropdown-box.active .selected-item::after {
+        transform: translateY(-30%) rotate(225deg);
+}
+
 .dropdown-box .dropdown-content {
-        box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
-        border-radius: 5px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-radius: 6px;
+        border: 1px solid #eee;
         max-height: 240px;
-        overflow: auto;
+        overflow-y: auto;
         display: none;
         position: absolute;
+        top: calc(100% + 5px);
+        /* Adds a slight gap below the input */
+        left: 0;
         z-index: 99;
         background-color: white;
         width: 100%;
@@ -96,29 +130,58 @@ form {
 
 .dropdown-box.active .dropdown-content {
         display: block;
+        animation: fadeIn 0.2s ease;
 }
 
 .dropdown-box .dropdown-content .search-input {
-        padding: 5px;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        background: white;
+        border-bottom: 1px solid #eee;
+}
+
+.dropdown-box .dropdown-content .search-input input {
+        padding: 8px 12px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
 }
 
 .dropdown-box .dropdown-content ul {
         list-style: none;
+        margin: 0;
+        padding: 5px 0;
 }
 
 .dropdown-box .dropdown-content ul li {
-        font-size: 0.8rem;
-        padding: 2px 5px;
+        font-size: 0.95rem;
+        padding: 10px 15px;
         cursor: pointer;
+        color: #333;
+        transition: background-color 0.15s ease;
 }
 
 .dropdown-box .dropdown-content ul li:hover {
-        background-color: rgb(245, 245, 245);
+        background-color: #f5f5f5;
 }
 
 .dropdown-box .dropdown-content ul li.active {
-        background-color: rgb(213, 242, 246);
-        color: blue;
+        background-color: #e6f2ff;
+        color: #007bff;
+        font-weight: 500;
+}
+
+/* Simple fade-in animation for smoother UX */
+@keyframes fadeIn {
+        from {
+                opacity: 0;
+                transform: translateY(-5px);
+        }
+
+        to {
+                opacity: 1;
+                transform: translateY(0);
+        }
 }
 
 .alchemy {
