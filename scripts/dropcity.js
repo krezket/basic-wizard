@@ -1,10 +1,10 @@
 import { getCity } from '../API/citySearchAPI.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-        const dropdown = document.querySelector("dropdown-box-2");
+        const dropdown = document.querySelector(".dropdown-box-2");
         const selectedInput = document.querySelector(".selected-item-2 input");
         const searchInput = document.querySelector(".search-input-2 input");
-        const listContainer = document.querySelector("dropdown-content-2 ul");
+        const listContainer = document.querySelector(".dropdown-content-2 ul");
 
         let debounceTimer;
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Handle Item Selection via Event Delegation
         // We attach the listener to the UL, so it works even after the API replaces the LIs
         listContainer.addEventListener("click", (e) => {
-                const item = e.target.closest("dropdown-item-2");
+                const item = e.target.closest(".dropdown-item-2");
 
                 if (item && !item.classList.contains("no-results")) {
                         // Update input value
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         try {
                                 // Pass the search value to your API
-                                const apiResponse = await getCountry(searchValue);
+                                const apiResponse = await getCity(searchValue);
                                 console.log(apiResponse)
 
                                 // Render the new items
