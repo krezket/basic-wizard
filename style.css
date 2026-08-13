@@ -57,15 +57,13 @@ form {
         font-family: system-ui, -apple-system, sans-serif;
 }
 
-.dropdown-box,
-.dorpdown-box-2 {
+.dorpdown-box {
         position: relative;
         width: 250px;
         /* Gives the dropdown a consistent width */
 }
 
-.dropdown-box input,
-.dropdown-box-2 input {
+.dropdown-box input {
         width: 100%;
         padding: 10px 15px;
         border: 1px solid #ccc;
@@ -76,20 +74,16 @@ form {
 }
 
 .dropdown-box input:focus,
-.dropdown-box.active .selected-item input,
-.dropdown-box-2 input:focus,
-.dropdown-box-2.active .selected-item-2 input {
+.dropdown-box.active .selected-item input {
         border-color: #007bff;
 }
 
-.dropdown-box .selected-item,
-.dropdown-box-2 .selected-item-2 {
+.dropdown-box .selected-item {
         position: relative;
         cursor: pointer;
 }
 
-.dropdown-box .selected-item input,
-.dropdown-box-2 .selected-item-2 input {
+.dropdown-box .selected-item input {
         cursor: pointer;
         background-color: #fff;
         caret-color: transparent;
@@ -97,8 +91,7 @@ form {
 }
 
 /* Dropdown Arrow */
-.dropdown-box .selected-item::after,
-.dropsown-box-2 .selected-item-2::after {
+.dropsown-box .selected-item::after {
         content: "";
         width: 6px;
         height: 6px;
@@ -115,13 +108,11 @@ form {
 }
 
 /* Flip arrow when dropdown is open */
-.dropdown-box.active .selected-item::after,
-.dropdown-box-2.active .selected-item-2::after {
+.dropdown-box.active .selected-item::after {
         transform: translateY(-30%) rotate(225deg);
 }
 
-.dropdown-box .dropdown-content,
-.dropdown-box-2 .dropdown-content-2 {
+.dropdown-box .dropdown-content {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         border-radius: 6px;
         border: 1px solid #eee;
@@ -137,14 +128,12 @@ form {
         width: 100%;
 }
 
-.dropdown-box.active .dropdown-content,
-.dropdown-box-2.active .dropdown-content-2 {
+.dropdown-box.active .dropdown-content {
         display: block;
         animation: fadeIn 0.2s ease;
 }
 
-.dropdown-box .dropdown-content .search-input,
-.dropdown-box-2 .dropdown-content-2 .search-input-2 {
+.dropdown-box .dropdown-content .search-input {
         padding: 10px;
         position: sticky;
         top: 0;
@@ -152,22 +141,19 @@ form {
         border-bottom: 1px solid #eee;
 }
 
-.dropdown-box .dropdown-content .search-input input,
-.dropdown-box-2 .dropdown-content-2 .search-input-2 input {
+.dropdown-box .dropdown-content .search-input input {
         padding: 8px 12px;
         border-radius: 4px;
         border: 1px solid #ddd;
 }
 
-.dropdown-box .dropdown-content ul,
-.dropdown-box-2 .dropdown-content-2 ul {
+.dropdown-box .dropdown-content ul {
         list-style: none;
         margin: 0;
         padding: 5px 0;
 }
 
-.dropdown-box .dropdown-content ul li,
-.dropdown-box-2 .dropdown-content-2 ul li {
+.dropdown-box .dropdown-content ul li {
         font-size: 0.95rem;
         padding: 10px 15px;
         cursor: pointer;
@@ -175,13 +161,11 @@ form {
         transition: background-color 0.15s ease;
 }
 
-.dropdown-box .dropdown-content ul li:hover,
-.dropdown-box-2 .dropdown-content-2 ul li:hover {
+.dropdown-box .dropdown-content ul li:hover {
         background-color: #f5f5f5;
 }
 
-.dropdown-box .dropdown-content ul li.active,
-.dropdown-box-2 .dropdown-content-2 ul li.active {
+.dropdown-box .dropdown-content ul li.active {
         background-color: #e6f2ff;
         color: #007bff;
         font-weight: 500;

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const fullData = JSON.parse(item.dataset.fullObject);
                                 //                                console.log("Full Selected Object:", fullData);
                                 console.log("id:", fullData.id)
-                                sessionStorage.setItem(fullData.id)
+                                sessionStorage.setItem("id", fullData.id)
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }
