@@ -1,32 +1,19 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
+export async function getCountry(searchQuery) {
+        // Point this to your new local Node.js server
+        const url = `http://localhost:3000/api/countries?q=${searchQuery}`;
 
-const apiKey = process.env.RAPIDAPI_KEY;
+        try {
+                const response = await fetch(url);
 
-export async function getCountry(userData) {
-        const options = {
-                method: 'GET',
-                url: 'https://city-and-state-search-api.p.rapidapi.com/cities/search',
-                params: {
-                        q: userData.country,
-                },
-                headers: {
-                        'x-rapidapi-key': apiKey,
-                        'x-rapidapi-host': 'city-and-state-search-api.p.rapidapi.com',
-                        'Content-Type': 'application/json'
+                if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
                 }
-        };
 
-        async function fetchData() {
-                try {
-                        const response = await axios.request(options);
-                        console.log(response.data);
-                } catch (error) {
-                        console.error(error);
-                }
+                const data = await response.json();
+                return data;
+
+        } catch (error) {
+                console.error("Error fetching country data from backend:", error);
+                return [];
         }
-        fetchData();
-};
-
-
+}
