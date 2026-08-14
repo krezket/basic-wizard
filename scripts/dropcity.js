@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 cities.forEach(city => {
                         const li = document.createElement("li");
                         li.className = "dropdown-item";
-                        li.textContent = city.name || city;
+                        li.textContent = `${city.name}, ${city.state_name}` || city;
 
-                        li.dataset.fullObject = JSON.stringify(country);
+                        li.dataset.fullObject = JSON.stringify(city);
 
                         listContainer.appendChild(li);
                 });
