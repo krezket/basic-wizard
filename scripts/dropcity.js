@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // We attach the listener to the UL, so it works even after the API replaces the LIs
         listContainer.addEventListener("click", (e) => {
                 const item = e.target.closest(".dropdown-item-2");
+                console.log("click")
 
                 if (item && !item.classList.contains("no-results")) {
                         // Update input value
@@ -35,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (item.dataset.fullObject) {
                                 const fullData = JSON.parse(item.dataset.fullObject);
-                                //                                console.log("Full Selected Object:", fullData);
-                                console.log("id:", fullData.id)
+                                console.log("Full Selected Object:", fullData);
+                                //console.log("id:", fullData.id)
                                 sessionStorage.setItem("id", fullData.id)
                         } else {
                                 console.log("Selected text:", item.textContent);
@@ -49,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 3. API Call with Debounce
         searchInput.addEventListener("input", (e) => {
-                const searchValue = e.target.value;
+                const preSearchValue = e.target.value;
                 const countryID = sessionStorage.getItem("country_id")
                 console.log(countryID)
+                const searchValue = `${preSearchValue}&country_id=${countryID}`
 
                 clearTimeout(debounceTimer);
 
@@ -89,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Generate new list items
                 cities.forEach(city => {
                         const li = document.createElement("li");
-                        li.className = "dropdown-item";
+                        li.className = "dropdown-item-2";
                         li.textContent = `${city.name}, ${city.state_name}` || city;
 
                         li.dataset.fullObject = JSON.stringify(city);
