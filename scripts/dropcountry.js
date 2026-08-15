@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         try {
                                 // Pass the search value to your API
                                 const apiResponse = await getCountry(searchValue);
-                                console.log(apiResponse)
+                                // console.log(apiResponse)
 
                                 // Render the new items
                                 renderDropdownItems(apiResponse);

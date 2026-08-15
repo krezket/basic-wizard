@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // We attach the listener to the UL, so it works even after the API replaces the LIs
         listContainer.addEventListener("click", (e) => {
                 const item = e.target.closest(".dropdown-item-2");
-                console.log("click")
 
                 if (item && !item.classList.contains("no-results")) {
                         // Update input value
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (item.dataset.fullObject) {
                                 const fullData = JSON.parse(item.dataset.fullObject);
                                 console.log("Full Selected Object:", fullData);
-                                //console.log("id:", fullData.id)
+                                console.log("id:", fullData.id)
                                 sessionStorage.setItem("id", fullData.id)
                         } else {
                                 console.log("Selected text:", item.textContent);
@@ -52,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
         searchInput.addEventListener("input", (e) => {
                 const preSearchValue = e.target.value;
                 const countryID = sessionStorage.getItem("country_id")
-                console.log(countryID)
                 const searchValue = `${preSearchValue}&country_id=${countryID}`
 
                 clearTimeout(debounceTimer);
@@ -67,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         try {
                                 // Pass the search value to your API
                                 const apiResponse = await getCity(searchValue);
-                                console.log(apiResponse)
+                                // console.log(apiResponse)
 
                                 // Render the new items
                                 renderDropdownItems(apiResponse);
@@ -75,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 console.error("Failed to fetch cities:", error);
                                 listContainer.innerHTML = '<li class="dropdown-item no-results">Error loading data</li>';
                         }
-                }, 200); // Waits 300ms after user stops typing
+                }, 200);
         });
 
         // 4. Render Dynamic Items
