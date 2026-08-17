@@ -43,12 +43,12 @@
                                 <h1>Astrology</h1>
                                         <form>
                                                 <div class="wizard-name">
-                                                        <label>Wizard Name:</label>
+                                                        <label for="wizardName">Wizard Name:</label>
                                                         <input type="text" name="wizardName">
                                                 </div>
 
                                                 <div class="select-con">
-                                                        <label>Month:</label>
+                                                        <label for="month">Month:</label>
                                                         <select id="month" name="month">
                                                                 <option value="1">January</option>
                                                                 <option value="2">February</option>
@@ -304,6 +304,9 @@
                                                 </div>
                                         </form>
                                 </div>
+                                <button class="form-submit" type='submit' onclick="submitForm()">
+                                        <h3>Submit</h3>
+                                </button>
                         </section>
 
                         <section class='alchemy'>
@@ -318,6 +321,7 @@
                 </main>
                 <script type="module" src="./scripts/dropcity.js"></script>
                 <script type="module" src="./scripts/dropcountry.js"></script>
+                <script src="./scripts/submitform.js"></script>
         </body>
 
 </html>
