@@ -1,4 +1,5 @@
 import { getCity } from '../API/citySearchAPI.js';
+import { getCityDetails } from '../API/citydetailsAPI.js';
 
 document.addEventListener("DOMContentLoaded", () => {
         const dropdown = document.querySelector(".dropdown-box-2");
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 console.log("Full Selected Object:", fullData);
                                 console.log("id:", fullData.id)
                                 sessionStorage.setItem("id", fullData.id)
+                                //TODO get city details
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }
