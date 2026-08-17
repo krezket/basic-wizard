@@ -64,8 +64,8 @@
                                                                 <option value="12">December</option>
                                                         </select>
 
-                                                        <label>Day:</label>
-                                                        <select>
+                                                        <label for="day">Day:</label>
+                                                        <select id="day" name="day">
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
                                                                 <option value="3">3</option>
@@ -99,8 +99,8 @@
                                                                 <option value="31">31</option>
                                                         </select>
 
-                                                        <label>Year:</label>
-                                                        <select>
+                                                        <label for="year">Year:</label>
+                                                        <select id="year" name="year">
                                                                 <option value="">1960</option>
                                                                 <option value="">1961</option>
                                                                 <option value="">1962</option>
@@ -180,8 +180,9 @@
                                                         </select>
                                                 </div>
 
-                                                <div class="select-con"> <label>Hour:</label>
-                                                        <select>
+                                                <div class="select-con"> 
+                                                        <label for="hour">Hour:</label>
+                                                        <select id="hour" name="hour">
                                                                 <option value="0">0 Midnight</option>
                                                                 <option value="1">1 am</option>
                                                                 <option value="2">2 am</option>
@@ -207,8 +208,9 @@
                                                                 <option value="22">22 = 10 pm</option>
                                                                 <option value="23">23 = 11 pm</option>
                                                         </select>
-                                                        <label>Minute:</label>
-                                                        <select>
+
+                                                        <label for="minute">Minute:</label>
+                                                        <select id="minute" name="minute">
                                                                 <option value="0">0</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -274,13 +276,13 @@
 
                                                 <div class="dropdown-box">
                                                         <div class="selected-item">
-                                                                <label>Country:<label>
-                                                                        <input type="text" name="" value="Select"
+                                                                <label for="country">Country:<label>
+                                                                        <input type="text" name="country" value="Select"
                                                                                 readonly id="">
                                                         </div>
                                                         <div class="dropdown-content">
                                                                 <div class="search-input">
-                                                                        <input type="text" name="" id="country">
+                                                                        <input type="text" id="country">
                                                                 </div>
                                                                 <ul>
                                                                         <li class="dropdown-item active">Select</li>
@@ -289,13 +291,13 @@
                                                 </div>
                                                 <div class="dropdown-box-2">
                                                         <div class="selected-item-2">
-                                                                <label>City:<label>
-                                                                        <input type="text" name="" value="Select"
+                                                                <label for="city">City:<label>
+                                                                        <input type="text" name="city" value="Select"
                                                                                 readonly id="">
                                                         </div>
                                                         <div class="dropdown-content-2">
                                                                 <div class="search-input-2">
-                                                                        <input type="text" name="" id="city">
+                                                                        <input type="text" id="city">
                                                                 </div>
                                                                 <ul>
                                                                         <li class="dropdown-item-2 active">Select</li>
