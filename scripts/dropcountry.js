@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (item.dataset.fullObject) {
                                 const fullData = JSON.parse(item.dataset.fullObject);
-                                console.log("Full Selected Object:", fullData);
-                                console.log("country_id:", fullData.id)
+                                // console.log("Full Selected Object:", fullData);
+                                // console.log("country_id:", fullData.id)
                                 sessionStorage.setItem("country_id", fullData.id)
                         } else {
                                 console.log("Selected text:", item.textContent);

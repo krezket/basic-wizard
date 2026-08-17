@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (item.dataset.fullObject) {
                                 const fullData = JSON.parse(item.dataset.fullObject);
-                                console.log("Full Selected Object:", fullData);
-                                console.log("id:", fullData.id)
+                                // console.log("Full Selected Object:", fullData);
+                                // console.log("id:", fullData.id)
                                 sessionStorage.setItem("id", fullData.id)
                                 //TODO get city details
                         } else {
@@ -48,6 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         searchInput.value = "";
                 }
         });
+
+        function getCoordinates() {
+                const cityID = sessionStorage.getItem("id");
+
+                if (!cityID) {
+                        return;
+                }
+                const apiResponse = await getCityDetails(cityID);
+                console.log(apiResponse);
+                // const coordinates = apiResponse.coordinates;
+                // console.log(coordinates);
+                // return coordinates;
+        }
+
+        } 
 
         // 3. API Call with Debounce
         searchInput.addEventListener("input", (e) => {
