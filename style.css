@@ -13,8 +13,8 @@ main {
 }
 
 header {
-        background-size: cover;
         display: flex;
+        background-size: cover;
         justify-content: center;
         align-items: center;
         color: white;
@@ -23,6 +23,11 @@ header {
         /* -webkit-backdrop-filter: blur(15px); */
         backdrop-filter: blur(3px);
 }
+
+/* .button-con { */
+/*         display: flex; */
+/*         align-items: center; */
+/* } */
 
 .alchemy {
         color: white;
