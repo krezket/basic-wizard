@@ -47,22 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
                         dropdown.classList.remove("active");
                         searchInput.value = "";
                 }
-        });
+                function getCoordinates() {
+                        const cityID = sessionStorage.getItem("id");
 
-        function getCoordinates() {
-                const cityID = sessionStorage.getItem("id");
-
-                if (!cityID) {
-                        return;
+                        if (!cityID) {
+                                return;
+                        }
+                        const apiResponse = await getCityDetails(cityID);
+                        console.log(apiResponse);
+                        // const coordinates = apiResponse.coordinates;
+                        // console.log(coordinates);
+                        // return coordinates;
                 }
-                const apiResponse = await getCityDetails(cityID);
-                console.log(apiResponse);
-                // const coordinates = apiResponse.coordinates;
-                // console.log(coordinates);
-                // return coordinates;
-        }
-
-        } 
+        });
 
         // 3. API Call with Debounce
         searchInput.addEventListener("input", (e) => {
