@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 2. Handle Item Selection via Event Delegation
         // We attach the listener to the UL, so it works even after the API replaces the LIs
-        listContainer.addEventListener("click", (e) => {
+        listContainer.addEventListener("click", async (e) => {
                 const item = e.target.closest(".dropdown-item-2");
 
                 if (item && !item.classList.contains("no-results")) {
@@ -39,7 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                 // console.log("Full Selected Object:", fullData);
                                 // console.log("id:", fullData.id)
                                 localStorage.setItem("id", fullData.id)
-                                //TODO get city details
+                                try {
+                                        const citydetails = await getCityDetails(fullData.id)
+                                        localStorage.setItem("latitude", citydetails.latitude)
+                                        localStorage.setItem("longitude", citydetails.longitude)
+                                        // console.log(citydetails)
+                                        // console.log(citydetails.latitude)
+                                        // console.log(citydetails.longitude)
+                                } catch (error) {
+                                        console.error("Failed to fetch city details:", error);
+                                }
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }

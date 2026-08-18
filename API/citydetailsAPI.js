@@ -1,7 +1,7 @@
 export async function getCityDetails(id) {
         // Point this to your new local Node.js server
         const url = `http://localhost:3000/api/citydetails/${id}`;
-
+        console.log(url)
         try {
                 const response = await fetch(url);
 
@@ -17,4 +17,3 @@ export async function getCityDetails(id) {
                 return [];
         }
 }
-
