@@ -5,8 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedInput = document.querySelector(".selected-item input");
         const searchInput = document.querySelector(".search-input input");
         const listContainer = document.querySelector(".dropdown-content ul");
+        const preName = localStorage.getItem("country_name")
+        const preID = localStorage.getItem("country_id")
 
         let debounceTimer;
+
+        if (!preName && !preID) {
+                localStorage.setItem("country_id", "233")
+                localStorage.setItem("country_name", "United States")
+        } else {
+                selectedInput.value = preName;
+        }
 
         // 1. Toggle dropdown & close when clicking outside
         document.addEventListener("click", (e) => {
@@ -37,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const fullData = JSON.parse(item.dataset.fullObject);
                                 // console.log("Full Selected Object:", fullData);
                                 // console.log("country_id:", fullData.id)
-                                sessionStorage.setItem("country_id", fullData.id)
+                                localStorage.setItem("country_id", fullData.id)
+                                localStorage.setItem("country_name", fullData.name)
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }
