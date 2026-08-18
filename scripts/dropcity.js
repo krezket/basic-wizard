@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const fullData = JSON.parse(item.dataset.fullObject);
                                 // console.log("Full Selected Object:", fullData);
                                 // console.log("id:", fullData.id)
-                                sessionStorage.setItem("id", fullData.id)
+                                localStorage.setItem("id", fullData.id)
                                 //TODO get city details
                         } else {
                                 console.log("Selected text:", item.textContent);
@@ -47,24 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         dropdown.classList.remove("active");
                         searchInput.value = "";
                 }
-                function getCoordinates() {
-                        const cityID = sessionStorage.getItem("id");
-
-                        if (!cityID) {
-                                return;
-                        }
-                        const apiResponse = await getCityDetails(cityID);
-                        console.log(apiResponse);
-                        // const coordinates = apiResponse.coordinates;
-                        // console.log(coordinates);
-                        // return coordinates;
-                }
         });
 
         // 3. API Call with Debounce
         searchInput.addEventListener("input", (e) => {
                 const preSearchValue = e.target.value;
-                const countryID = sessionStorage.getItem("country_id")
+                const countryID = localStorage.getItem("country_id")
                 const searchValue = `${preSearchValue}&country_id=${countryID}`
 
                 clearTimeout(debounceTimer);
