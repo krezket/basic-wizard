@@ -19,12 +19,12 @@ async function submitForm() {
     inputs.forEach(input => {
 
         // add value of all input to formValues object
-            formValues[input.name] = input.value;
+        formValues[input.name] = input.value;
     });
     select.forEach(select => {
 
         // add value of all input to formValues object
-            formValues[select.name] = select.value;
+        formValues[select.name] = select.value;
     });
 
     formValues.latitude = Math.floor(latitude);
@@ -35,7 +35,7 @@ async function submitForm() {
     // for debuggind
     console.log(formValues);
 
-   /*  */ /*  */ /*  */ /*  */ 
+    /*  */ /*  */ /*  */ /*  */ 
 
     try {
         const response = await fetch('http://localhost:3000/api/astrologer', {
@@ -44,7 +44,24 @@ async function submitForm() {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            console.log(response);
+            const data = await response.json();
+            console.log(data);
+            console.log(data.sun);
+            console.log(data.moon);
+            console.log(data.mercury);
+            console.log(data.venus);
+            console.log(data.mars);
+            console.log(data.jupiter);
+            console.log(data.saturn);
+            console.log(data.uranus);
+            console.log(data.neptune);
+            console.log(data.pluto);
+            console.log(data.ascendant);
+            console.log(data.descendant);
+            console.log(data.medium_coeli);
+            console.log(data.imum_coeli);
+            console.log(data.chiron);
+            console.log(data.mean_lilith);
         }
         else {
             alert('An error occurred while sending.');
