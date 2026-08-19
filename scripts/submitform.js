@@ -8,6 +8,8 @@ async function submitForm() {
     const select = document.querySelectorAll('select');
     const latitude = localStorage.getItem('latitude');
     const longitude = localStorage.getItem('longitude');
+    const nation = localStorage.getItem('country_code');
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     if (!inputs || !select || !latitude || !longitude) {
         return;
@@ -25,29 +27,31 @@ async function submitForm() {
             formValues[select.name] = select.value;
     });
 
-    formValues.latitude = latitude;
-    formValues.longitude = longitude;
+    formValues.latitude = Math.floor(latitude);
+    formValues.longitude = Math.floor(longitude);
+    formValues.timezone = timezone;
+    formValues.nation = nation;
 
     // for debuggind
     console.log(formValues);
 
    /*  */ /*  */ /*  */ /*  */ 
 
-    // try {
-    //     const response = await fetch('https://bna-backend-d057bbf0cede.herokuapp.com/submit-form', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(formValues)
-    //         });
-    //     if (response.ok) {
-    //         window.location.href = '../success/';
-    //     }
-    //     else {
-    //         alert('An error occurred while sending the email.');
-    //     }; 
-    // } catch (error) {
-    //     console.error('Error:', error);
-    //     alert('An error occurred while sending the email');
-    // };
+    try {
+        const response = await fetch('http://localhost:3000/api/astrologer', {
+            method: 'POST',
+            body: JSON.stringify(formValues),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (response.ok) {
+            console.log(response);
+        }
+        else {
+            alert('An error occurred while sending.');
+        }; 
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while sending.');
+    };
 };
 

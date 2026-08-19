@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let debounceTimer;
 
         if (!preName && !preID) {
-                localStorage.setItem("country_id", "233")
-                localStorage.setItem("country_name", "United States")
+                localStorage.setItem("country_id", "233");
+                localStorage.setItem("country_name", "United States");
+                localStorage.setItem("country_code", "US");
         } else {
                 selectedInput.value = preName;
         }
@@ -45,9 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (item.dataset.fullObject) {
                                 const fullData = JSON.parse(item.dataset.fullObject);
                                 // console.log("Full Selected Object:", fullData);
-                                // console.log("country_id:", fullData.id)
-                                localStorage.setItem("country_id", fullData.id)
-                                localStorage.setItem("country_name", fullData.name)
+                                // console.log("country_id:", fullData.id);
+                                localStorage.setItem("country_id", fullData.id);
+                                localStorage.setItem("country_name", fullData.name);
+                                localStorage.setItem("country_code", fullData.iso2);
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }
