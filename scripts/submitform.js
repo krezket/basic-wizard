@@ -6,6 +6,12 @@ async function submitForm() {
     // get all inputs
     const inputs = document.querySelectorAll('input');
     const select = document.querySelectorAll('select');
+    const latitude = localStorage.getItem('latitude');
+    const longitude = localStorage.getItem('longitude');
+
+    if (!inputs || !select || !latitude || !longitude) {
+        return;
+    }
 
     // do the following for each input 
     inputs.forEach(input => {
@@ -18,6 +24,9 @@ async function submitForm() {
         // add value of all input to formValues object
             formValues[select.name] = select.value;
     });
+
+    formValues.latutude = latitude;
+    formValues.longitude = longitude;
 
     // for debuggind
     console.log(formValues);
