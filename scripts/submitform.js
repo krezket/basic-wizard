@@ -25,7 +25,7 @@ async function submitForm() {
             formValues[select.name] = select.value;
     });
 
-    formValues.latutude = latitude;
+    formValues.latitude = latitude;
     formValues.longitude = longitude;
 
     // for debuggind
