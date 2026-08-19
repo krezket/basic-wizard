@@ -1,6 +1,9 @@
+const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/countries?q="
+
 export async function getCountry(searchQuery) {
         // Point this to your new local Node.js server
-        const url = `http://localhost:3000/api/countries?q=${searchQuery}`;
+        const url = `${H_URL}${searchQuery}`;
+        // const url = `http://localhost:3000/api/countries?q=${searchQuery}`;
 
         try {
                 const response = await fetch(url);

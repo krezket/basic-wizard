@@ -33,12 +33,14 @@ async function submitForm() {
     formValues.nation = nation;
 
     // for debuggind
-    console.log(formValues);
+    // console.log(formValues);
 
     /*  */ /*  */ /*  */ /*  */ 
+const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astrologer"
 
     try {
-        const response = await fetch('http://localhost:3000/api/astrologer', {
+        // const response = await fetch('http://localhost:3000/api/astrologer', {
+        const response = await fetch(`${H_URL}`, {
             method: 'POST',
             body: JSON.stringify(formValues),
             headers: { 'Content-Type': 'application/json' }
@@ -46,22 +48,24 @@ async function submitForm() {
         if (response.ok) {
             const data = await response.json();
             console.log(data);
-            console.log(data.sun);
-            console.log(data.moon);
-            console.log(data.mercury);
-            console.log(data.venus);
-            console.log(data.mars);
-            console.log(data.jupiter);
-            console.log(data.saturn);
-            console.log(data.uranus);
-            console.log(data.neptune);
-            console.log(data.pluto);
-            console.log(data.ascendant);
-            console.log(data.descendant);
-            console.log(data.medium_coeli);
-            console.log(data.imum_coeli);
-            console.log(data.chiron);
-            console.log(data.mean_lilith);
+            const svg = data.chart;
+            document.getElementById('svg-container').innerHTML = svg;
+            // console.log(data.sun);
+            // console.log(data.moon);
+            // console.log(data.mercury);
+            // console.log(data.venus);
+            // console.log(data.mars);
+            // console.log(data.jupiter);
+            // console.log(data.saturn);
+            // console.log(data.uranus);
+            // console.log(data.neptune);
+            // console.log(data.pluto);
+            // console.log(data.ascendant);
+            // console.log(data.descendant);
+            // console.log(data.medium_coeli);
+            // console.log(data.imum_coeli);
+            // console.log(data.chiron);
+            // console.log(data.mean_lilith);
         }
         else {
             alert('An error occurred while sending.');

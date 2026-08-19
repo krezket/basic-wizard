@@ -1,6 +1,9 @@
+const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/citydetails/"
+
 export async function getCityDetails(id) {
         // Point this to your new local Node.js server
-        const url = `http://localhost:3000/api/citydetails/${id}`;
+        const url = `${H_URL}${id}`;
+        // const url = `http://localhost:3000/api/citydetails/${searchQuery}`;
         console.log(url)
         try {
                 const response = await fetch(url);
