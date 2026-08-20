@@ -48,8 +48,14 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
         });
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
+            console.log(data.chart_data.subject);
             const svg = data.chart;
+            const sun = (data.chart_data.subject.sun);
+            //TODO fix 
+            console.log(sun)
+            const h1 = document.createElement("h1");
+            h1.textContent = `${sun.emoji}, ${sun.sign}`;
             document.getElementById('svg-container').innerHTML = svg;
             // console.log(data.sun);
             // console.log(data.moon);
