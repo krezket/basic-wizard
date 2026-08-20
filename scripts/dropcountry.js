@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedInput2 = document.querySelector(".selected-item-2 input");
         const searchInput = document.querySelector(".search-input input");
         const listContainer = document.querySelector(".dropdown-content ul");
+        const listContainer2 = document.querySelector(".dropdown-content-2 ul");
         const preName = localStorage.getItem("country_name")
         const preID = localStorage.getItem("country_id")
 
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 localStorage.removeItem("latitude");
                                 localStorage.removeItem("longitude");
                                 selectedInput2.value = "Select";
+                                listContainer2.innerHTML = '<li class"dropdown-item-2 active">Select</li>'
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }
