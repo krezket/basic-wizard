@@ -26,6 +26,11 @@ form {
         margin: 10px;
 }
 
+label {
+        font-size: 1.5rem;
+        padding-top: 10px;
+}
+
 .wizard-name input,
 .select-con select {
         /* padding: 8px 12px; */
@@ -34,9 +39,10 @@ form {
         width: 100%;
         padding: 12px 15px;
         background: rgba(0, 229, 255, 0.05); /* Very transparent cyan */
-        /* border: 1px solid #00e5ff; */
+        border: 1px solid gray; 
+        border-radius: 10px;
         color: #fff;
-        font-family: 'Share Tech Mono', monospace;
+        /* font-family: 'Share Tech Mono', monospace; */
         font-size: 1rem;
         outline: none;
         transition: all 0.3s ease;
@@ -46,13 +52,14 @@ form {
         display: flex;
         /* align-items: center; */
         flex-direction: column;
-        padding-top: 10px;
+        padding-top: 15px;
         /* max-width: 100px; */
 }
 
 .dropdown-box-2,
 .dropdown-box {
         position: relative;
+        padding-top: 20px;
 }
 
 .dropdown-box-2 input,
@@ -93,7 +100,7 @@ form {
         background: rgba(0, 229, 255, 0.05); /* Very transparent cyan */
         /* border: 1px solid #00e5ff; */
         color: #fff;
-        font-family: 'Share Tech Mono', monospace;
+        /* font-family: 'Share Tech Mono', monospace; */
         font-size: 1rem;
         outline: none;
         transition: all 0.3s ease;
