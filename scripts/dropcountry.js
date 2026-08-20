@@ -3,6 +3,7 @@ import { getCountry } from '../API/countrySearchAPI.js';
 document.addEventListener("DOMContentLoaded", () => {
         const dropdown = document.querySelector(".dropdown-box");
         const selectedInput = document.querySelector(".selected-item input");
+        const selectedInput2 = document.querySelector(".selected-item-2 input");
         const searchInput = document.querySelector(".search-input input");
         const listContainer = document.querySelector(".dropdown-content ul");
         const preName = localStorage.getItem("country_name")
@@ -50,6 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 localStorage.setItem("country_id", fullData.id);
                                 localStorage.setItem("country_name", fullData.name);
                                 localStorage.setItem("country_code", fullData.iso2);
+
+                                localStorage.removeItem("id");
+                                localStorage.removeItem("latitude");
+                                localStorage.removeItem("longitude");
+                                selectedInput2.value = "Select";
                         } else {
                                 console.log("Selected text:", item.textContent);
                         }

@@ -11,7 +11,8 @@ async function submitForm() {
     const nation = localStorage.getItem('country_code');
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-    if (!inputs || !select || !latitude || !longitude) {
+    if (!latitude || !longitude) {
+        alert("Silly Goose Alert")
         return;
     }
 
