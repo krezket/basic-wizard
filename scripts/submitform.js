@@ -63,8 +63,6 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
             const pluto = (data.chart_data.subject.pluto);
             const ascendant = (data.chart_data.subject.ascendant);
             const descendant = (data.chart_data.subject.descendant);
-            const medium_coeli = (data.chart_data.subject.medium_coeli);
-            const imum_coeli = (data.chart_data.subject.imum_coeli);
             const chiron = (data.chart_data.subject.chiron);
             const mean_lilith = (data.chart_data.subject.mean_lilith);
 
@@ -81,8 +79,6 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
             console.log(pluto);
             console.log(ascendant);
             console.log(descendant);
-            console.log(medium_coeli);
-            console.log(imum_coeli);
             console.log(chiron);
             console.log(mean_lilith);
 
@@ -98,8 +94,6 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
             document.getElementById('pluto').innerHTML = pluto.sign;
             document.getElementById('ascendant').innerHTML = ascendant.sign;
             document.getElementById('descendant').innerHTML = descendant.sign;
-            document.getElementById('medium_coeli').innerHTML = medium_coeli.sign;
-            document.getElementById('imum_coeli').innerHTML = imum_coeli.sign;
             document.getElementById('chiron').innerHTML = chiron.sign;
             document.getElementById('mean_lilith').innerHTML = mean_lilith.sign;
 
