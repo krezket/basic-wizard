@@ -89,12 +89,6 @@ label {
 .dropdown-box-2 .selected-item-2 input,
 .dropdown-box .selected-item input {
         cursor: pointer;
-        /* background-color: #fff; */
-        /* caret-color: transparent; */
-        /* user-select: none; */
-        /* padding: 8px 12px; */
-        /* border-radius: 4px; */
-        /* border: 1px solid #ddd; */
         width: 100%;
         padding: 12px 15px;
         background: rgba(0, 229, 255, 0.05); /* Very transparent cyan */
@@ -117,7 +111,7 @@ label {
         position: absolute;
         top: 50%;
         right: 15px;
-        transform: translateY(-70%) rotate(45deg);
+        transform: translateY(10%) rotate(45deg);
         transition: transform 0.3s ease;
         /* Animates the arrow */
         pointer-events: none;

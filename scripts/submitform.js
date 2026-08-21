@@ -77,6 +77,7 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
 
             // Set the SVG
             document.getElementById('svg-container').innerHTML = data.chart;
+            // document.querySelector(.astrology).classList.add("gone");
         } else {
             alert('An error occurred while sending.');
         } 
