@@ -49,30 +49,61 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
         if (response.ok) {
             const data = await response.json();
             // console.log(data);
-            console.log(data.chart_data.subject);
+            // console.log(data.chart_data.subject);
             const svg = data.chart;
             const sun = (data.chart_data.subject.sun);
-            //TODO fix 
-            console.log(sun)
-            const h1 = document.createElement("h1");
-            h1.textContent = `${sun.emoji}, ${sun.sign}`;
+            const moon = (data.chart_data.subject.moon);
+            const mercury = (data.chart_data.subject.mercury);
+            const venus = (data.chart_data.subject.venus);
+            const mars = (data.chart_data.subject.mars);
+            const jupiter = (data.chart_data.subject.jupiter);
+            const saturn = (data.chart_data.subject.saturn);
+            const uranus = (data.chart_data.subject.uranus);
+            const neptune = (data.chart_data.subject.neptune);
+            const pluto = (data.chart_data.subject.pluto);
+            const ascendant = (data.chart_data.subject.ascendant);
+            const descendant = (data.chart_data.subject.descendant);
+            const medium_coeli = (data.chart_data.subject.medium_coeli);
+            const imum_coeli = (data.chart_data.subject.imum_coeli);
+            const chiron = (data.chart_data.subject.chiron);
+            const mean_lilith = (data.chart_data.subject.mean_lilith);
+
+            // TODO fix 
+            console.log(sun);
+            console.log(moon);
+            console.log(mercury);
+            console.log(venus);
+            console.log(mars);
+            console.log(jupiter);
+            console.log(saturn);
+            console.log(uranus);
+            console.log(neptune);
+            console.log(pluto);
+            console.log(ascendant);
+            console.log(descendant);
+            console.log(medium_coeli);
+            console.log(imum_coeli);
+            console.log(chiron);
+            console.log(mean_lilith);
+
+            document.getElementById('sun').innerHTML = sun.sign;
+            document.getElementById('moon').innerHTML = moon.sign;
+            document.getElementById('mercury').innerHTML = mercury.sign;
+            document.getElementById('venus').innerHTML = venus.sign;
+            document.getElementById('mars').innerHTML = mars.sign;
+            document.getElementById('jupiter').innerHTML = jupiter.sign;
+            document.getElementById('saturn').innerHTML = saturn.sign;
+            document.getElementById('uranus').innerHTML = uranus.sign;
+            document.getElementById('neptune').innerHTML = neptune.sign;
+            document.getElementById('pluto').innerHTML = pluto.sign;
+            document.getElementById('ascendant').innerHTML = ascendant.sign;
+            document.getElementById('descendant').innerHTML = descendant.sign;
+            document.getElementById('medium_coeli').innerHTML = medium_coeli.sign;
+            document.getElementById('imum_coeli').innerHTML = imum_coeli.sign;
+            document.getElementById('chiron').innerHTML = chiron.sign;
+            document.getElementById('mean_lilith').innerHTML = mean_lilith.sign;
+
             document.getElementById('svg-container').innerHTML = svg;
-            // console.log(data.sun);
-            // console.log(data.moon);
-            // console.log(data.mercury);
-            // console.log(data.venus);
-            // console.log(data.mars);
-            // console.log(data.jupiter);
-            // console.log(data.saturn);
-            // console.log(data.uranus);
-            // console.log(data.neptune);
-            // console.log(data.pluto);
-            // console.log(data.ascendant);
-            // console.log(data.descendant);
-            // console.log(data.medium_coeli);
-            // console.log(data.imum_coeli);
-            // console.log(data.chiron);
-            // console.log(data.mean_lilith);
         }
         else {
             alert('An error occurred while sending.');
