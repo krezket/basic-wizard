@@ -10,13 +10,30 @@
         backdrop-filter: blur(3px);
 }
 
-/* .astro-form-con { */
-/*         display: flex; */
-/*         flex-direction: column; */
-/* } */
+.astro-form-con {
+        display: flex;
+        flex-direction: column;
+}
 
 .astro-form-con h1 {
         padding: 0 10px 0 10px;
+}
+.astro-form-con.gone {
+        display: none;
+}
+
+.results-con {
+        display: none;
+}
+
+.results-con.active {
+        display: flex;
+        flex-direction: column;
+}
+
+.name-title {
+        display: flex;
+        flex-direction: row;
 }
 
 form {

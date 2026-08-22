@@ -6,6 +6,8 @@ async function submitForm() {
     // get all inputs
     const inputs = document.querySelectorAll('input');
     const select = document.querySelectorAll('select');
+    const astrocon = document.querySelector('.astro-form-con');
+    const resultcon = document.querySelector('.results-con');
     const latitude = localStorage.getItem('latitude');
     const longitude = localStorage.getItem('longitude');
     const nation = localStorage.getItem('country_code');
@@ -71,13 +73,14 @@ const H_URL = "https://basic-wizard-backend-04b2d718d7ba.herokuapp.com/api/astro
                 const element = document.getElementById(body);
                 if (element && celestialObject) {
                     // Use textContent instead of innerHTML for better performance and security
-                    element.textContent = `${celestialObject.name} -> ${celestialObject.sign}`; 
+                    element.textContent = `${celestialObject.sign} ${celestialObject.emoji}`; 
                 }
             });
 
             // Set the SVG
             document.getElementById('svg-container').innerHTML = data.chart;
-            // document.querySelector(.astrology).classList.add("gone");
+            astrocon.classList.add('gone')
+            resultcon.classList.add('active')
         } else {
             alert('An error occurred while sending.');
         } 
